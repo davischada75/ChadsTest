@@ -1,0 +1,16 @@
+<div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel ID="FruitPanel" runat="server"  CssClass="form-control" Font-Size="9pt">
+        <ContentTemplate>
+            <asp:Label ID="LabelColors" runat="server" Text="Label"></asp:Label>
+            <div style="margin: 0 auto; padding: 10px; margin-top: 0%;">
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" CssClass="form-control" Font-Size="10pt" OnSelectedIndexChanged="SelectedIndexChanged">
+                  <asp:ListItem>Choose one</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="DropDownList1" EventName="SelectedIndexChanged" />
+        </Triggers>
+    </asp:UpdatePanel>
+</div>
